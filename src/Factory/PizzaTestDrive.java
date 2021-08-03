@@ -9,9 +9,9 @@ public class PizzaTestDrive {
     public static void main(String[] args) {
         PizzaStore nyStore = new NYStylePizzaStore();
         PizzaStore chiStore = new ChicagoStylePizzaStore();
-        Pizza pizza = nyStore.orderPizza("cheese");
-        System.out.println("Eaten ordered " + pizza.getName() + "\n");
+        Pizza pizza = nyStore.orderPizza("veggie");
+        System.out.println("Eaten ordered " + pizza + "\n");
         pizza = chiStore.orderPizza("pepperoni");
-        System.out.println("Joel ordered " + pizza.getName() + "\n");
+        System.out.println("Joel ordered "  + pizza + "\n");
     }
 }
