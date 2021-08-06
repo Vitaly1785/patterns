@@ -1,17 +1,19 @@
-package Command;
+package Command.CellingFan;
 
-public class CellingFanSlowCommand implements Command{
+import Command.Command;
+
+public class CellingFanOffCommand implements Command {
     CellingFan cellingFan;
     int prevSpeed;
 
-    public CellingFanSlowCommand(CellingFan cellingFan) {
+    public CellingFanOffCommand(CellingFan cellingFan) {
         this.cellingFan = cellingFan;
     }
 
     @Override
     public void execute() {
         prevSpeed = cellingFan.getSpeed();
-        cellingFan.slow();
+        cellingFan.off();
     }
 
     @Override

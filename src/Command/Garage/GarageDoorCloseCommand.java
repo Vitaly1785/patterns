@@ -1,6 +1,8 @@
-package Command;
+package Command.Garage;
 
-public class GarageDoorCloseCommand implements Command{
+import Command.Command;
+
+public class GarageDoorCloseCommand implements Command {
     GarageDoor garageDoor;
 
     public GarageDoorCloseCommand(GarageDoor garageDoor) {

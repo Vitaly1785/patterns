@@ -1,4 +1,4 @@
-package Command;
+package Command.Light;
 
 public class Light {
     String title;

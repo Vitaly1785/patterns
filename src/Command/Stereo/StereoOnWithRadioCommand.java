@@ -1,6 +1,8 @@
-package Command;
+package Command.Stereo;
 
-public class StereoOnWithRadioCommand implements Command{
+import Command.Command;
+
+public class StereoOnWithRadioCommand implements Command {
     Stereo stereo;
 
     public StereoOnWithRadioCommand(Stereo stereo) {

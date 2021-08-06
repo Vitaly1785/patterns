@@ -1,4 +1,4 @@
-package Command;
+package Command.CellingFan;
 
 public class CellingFan {
     public static final int HIGH = 3;

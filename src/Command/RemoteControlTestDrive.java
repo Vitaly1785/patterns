@@ -1,5 +1,10 @@
 package Command;
 
+import Command.CellingFan.*;
+import Command.Garage.GarageDoor;
+import Command.Light.Light;
+import Command.Stereo.Stereo;
+
 public class RemoteControlTestDrive {
     public static void main(String[] args) {
         Light lightKitchen = new Light("Kitchen");

@@ -1,4 +1,4 @@
-package Command;
+package Command.Garage;
 
 public class GarageDoor {
     public void up(){

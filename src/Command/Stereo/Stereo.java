@@ -1,4 +1,4 @@
-package Command;
+package Command.Stereo;
 
 public class Stereo {
     private String title;

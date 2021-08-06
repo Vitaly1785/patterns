@@ -1,6 +1,8 @@
-package Command;
+package Command.CellingFan;
 
-public class CellingFanMediumCommand implements Command{
+import Command.Command;
+
+public class CellingFanMediumCommand implements Command {
     CellingFan cellingFan;
     int prevSpeed;
 
