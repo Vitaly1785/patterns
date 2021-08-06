@@ -2,34 +2,50 @@ package Command;
 
 import Command.CellingFan.*;
 import Command.Garage.GarageDoor;
+import Command.Hottub.Hottub;
+import Command.Hottub.HottubOffCommand;
+import Command.Hottub.HottubOnCommand;
 import Command.Light.Light;
+import Command.Light.LightOffCommand;
+import Command.Light.LightOnCommand;
 import Command.Stereo.Stereo;
+import Command.Stereo.StereoOffCommand;
+import Command.Stereo.StereoOnWithDvdCommand;
+import Command.TV.TV;
+import Command.TV.TVOffCommand;
+import Command.TV.TVOnCommand;
 
 public class RemoteControlTestDrive {
     public static void main(String[] args) {
-        Light lightKitchen = new Light("Kitchen");
-        Light lightLivingRoom = new Light("Living Room");
-        Light lightBedRoom = new Light("Bed Room");
-        GarageDoor garageDoor = new GarageDoor();
-        CellingFan cellingFan = new CellingFan("kitchen");
-        Stereo stereo = new Stereo("Living Room");
+        Light light = new Light("Hall");
+        TV tv = new TV("Hall");
+        Stereo stereo = new Stereo("Hall");
+        Hottub hottub = new Hottub();
 
-       CellingFanHighCommand cellingFanHighCommand = new CellingFanHighCommand(cellingFan);
-       CellingFanMediumCommand cellingFanMediumCommand = new CellingFanMediumCommand(cellingFan);
-       CellingFanSlowCommand cellingFanSlowCommand = new CellingFanSlowCommand(cellingFan);
-       CellingFanOffCommand cellingFanOffCommand = new CellingFanOffCommand(cellingFan);
+        LightOnCommand lightOnHall = new LightOnCommand(light);
+        LightOffCommand lightOffHall = new LightOffCommand(light);
 
-       RemoteControl remoteControl = new RemoteControl();
-       remoteControl.setCommand(0, cellingFanHighCommand, cellingFanOffCommand);
-       remoteControl.setCommand(1, cellingFanMediumCommand, cellingFanOffCommand);
-       remoteControl.setCommand(2, cellingFanSlowCommand, cellingFanOffCommand);
+        TVOnCommand tvOnHall = new TVOnCommand(tv);
+        TVOffCommand tvOffHall = new TVOffCommand(tv);
 
-       remoteControl.buttonOnWasPressed(0);
+        StereoOnWithDvdCommand stereoOnWithDvd = new StereoOnWithDvdCommand(stereo);
+        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
 
-       remoteControl.buttonOnWasPressed(1);
+        HottubOnCommand hottubOn = new HottubOnCommand(hottub);
+        HottubOffCommand hottubOff = new HottubOffCommand(hottub);
 
-       remoteControl.buttonOnWasPressed(2);
+        Command[] partyOn = {lightOnHall, tvOnHall, stereoOnWithDvd, hottubOn};
+        Command[] partyOff = {lightOffHall, tvOffHall, stereoOff, hottubOff};
 
-       remoteControl.undoCommandWasPushed();
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        RemoteControl remoteControl = new RemoteControl();
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+        remoteControl.buttonOnWasPressed(0);
+        System.out.println("-----------");
+        remoteControl.buttonOffWasPressed(0);
+        System.out.println("-----------");
+        remoteControl.undoCommandWasPushed();
     }
 }
