@@ -13,4 +13,9 @@ public class StereoOnWithRadioCommand implements Command{
         stereo.setRadio();
         stereo.setVolume(6);
     }
+
+    @Override
+    public void undo() {
+        stereo.off();
+    }
 }
