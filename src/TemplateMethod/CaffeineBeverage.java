@@ -6,7 +6,9 @@ public abstract class CaffeineBeverage {
         boilWater();
         brew();
         pourInCup();
-        addCondiments();
+        if (customerWantsCondiments()){
+            addCondiments();
+        }
     }
 
     protected abstract void brew();
@@ -21,4 +23,7 @@ public abstract class CaffeineBeverage {
         System.out.println("Pour Into Cup");
     }
 
+    protected boolean customerWantsCondiments(){
+        return true;
+    }
 }
