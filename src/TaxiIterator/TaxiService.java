@@ -1,28 +1,19 @@
 package TaxiIterator;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class TaxiService {
-    private Taxi budgetTaxi;
-    private Taxi premiumTaxi;
-    private Taxi luxuryTaxi;
+   private List<Taxi> taxis;
 
-    public TaxiService(BudgetTaxi budgetTaxi, PremiumTaxi premiumTaxi, LuxuryTaxi luxuryTaxi) {
-        this.budgetTaxi = budgetTaxi;
-        this.premiumTaxi = premiumTaxi;
-        this.luxuryTaxi = luxuryTaxi;
+    public TaxiService(List<Taxi> taxis) {
+        this.taxis = taxis;
     }
 
     public void printCheckTaxi(){
-        Iterator<TaxiItem> budgetIterator = budgetTaxi.createTaxiIterator();
-        Iterator<TaxiItem> premiumIterator = premiumTaxi.createTaxiIterator();
-        Iterator<TaxiItem> luxuryIterator = luxuryTaxi.createTaxiIterator();
-        System.out.println("Budget Taxi Cars");
-        print(budgetIterator);
-        System.out.println("Premium Taxi Cars");
-        print(premiumIterator);
-        System.out.println("Luxury Taxi Cars \\n----\\");
-        print(luxuryIterator);
+        for (Taxi taxi : taxis) {
+            print(taxi.createTaxiIterator());
+        }
     }
 
     public void print(Iterator<TaxiItem> taxiItemIterator){

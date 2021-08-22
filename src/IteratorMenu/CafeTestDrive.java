@@ -1,12 +1,13 @@
 package IteratorMenu;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class CafeTestDrive {
     public static void main(String[] args) {
-        PancakeHouse pancakeHouse = new PancakeHouse();
-        DinnerMenu dinnerMenu = new DinnerMenu();
-        CafeMenu cafeMenu = new CafeMenu();
+        ArrayList<Menu> menuArrayList = new ArrayList<>(Arrays.asList(new PancakeHouse(), new DinnerMenu(), new CafeMenu()));
 
-        Waitress waitress = new Waitress(pancakeHouse, dinnerMenu, cafeMenu);
+        Waitress waitress = new Waitress(menuArrayList);
         waitress.printMenu();
     }
 }

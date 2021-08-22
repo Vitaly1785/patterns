@@ -30,6 +30,7 @@ public class DinnerMenu implements Menu{
 
     @Override
     public Iterator<MenuItem> createIterator(){
+        System.out.println("Dinner menu \\n----\\");
         return new AlternatingDinnerMenuIterator(menuItems);
     }
 }

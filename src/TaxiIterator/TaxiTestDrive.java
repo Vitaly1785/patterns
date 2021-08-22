@@ -1,12 +1,14 @@
 package TaxiIterator;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class TaxiTestDrive {
     public static void main(String[] args) {
-        BudgetTaxi budgetTaxi = new BudgetTaxi();
-        PremiumTaxi premiumTaxi = new PremiumTaxi();
-        LuxuryTaxi luxuryTaxi = new LuxuryTaxi();
+        List<Taxi> taxiList = new ArrayList<>(Arrays.asList(new BudgetTaxi(), new PremiumTaxi(), new LuxuryTaxi()));
 
-        TaxiService taxiService = new TaxiService(budgetTaxi, premiumTaxi, luxuryTaxi);
+        TaxiService taxiService = new TaxiService(taxiList);
         taxiService.printCheckTaxi();
     }
 }

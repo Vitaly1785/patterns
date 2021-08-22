@@ -33,6 +33,7 @@ public class PancakeHouse implements Menu{
 
     @Override
     public Iterator<MenuItem>createIterator(){
+        System.out.println("Breakfast menu \\n----\\");
         return menuItems.iterator();
     }
 }

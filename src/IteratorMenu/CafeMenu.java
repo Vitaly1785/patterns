@@ -24,6 +24,7 @@ public class CafeMenu implements Menu{
 
     @Override
     public Iterator<MenuItem> createIterator() {
+        System.out.println("Lunch menu \\n-----\\");
         return menuItems.values().iterator();
     }
 }
