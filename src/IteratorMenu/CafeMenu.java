@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class CafeMenu implements Menu{
-    private HashMap<String, MenuItem> menuItems = new HashMap<String, MenuItem>();
+    private HashMap<String, MenuItem> menuItems = new HashMap<>();
 
     public CafeMenu() {
         addItem("Veggie Burger and Air Fries", "Veggie burger on a whole wheat bun, lettuce, tomato, and fries",
