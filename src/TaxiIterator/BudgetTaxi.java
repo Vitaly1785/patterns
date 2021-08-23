@@ -6,6 +6,7 @@ import java.util.Iterator;
 public class BudgetTaxi implements Taxi{
     ArrayList<TaxiItem> budgetTaxi;
 
+
     public BudgetTaxi() {
         budgetTaxi = new ArrayList<>();
         addBudgetTaxiItem(18, "Zhigul", "Gogik Mataladze");
