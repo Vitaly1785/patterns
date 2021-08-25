@@ -1,6 +1,4 @@
-package IteratorMenu;
-
-import Composite.MenuComponent;
+package Composite;
 
 public class MenuItem extends MenuComponent {
     private String name;
