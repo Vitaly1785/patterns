@@ -1,9 +1,11 @@
 package Composite;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Menu extends MenuComponent{
+    private Iterator<MenuComponent> iterator = null;
     private List<MenuComponent> menuComponents = new ArrayList<>();
     private String name;
     private String description;
@@ -11,6 +13,13 @@ public class Menu extends MenuComponent{
     public Menu(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public Iterator<MenuComponent> createIterator(){
+        if (iterator == null){
+            iterator = new CompositeIterator(menuComponents.iterator());
+        }
+        return iterator;
     }
 
     @Override
